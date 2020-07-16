@@ -1,13 +1,13 @@
 package nes
 
+import "github.com/kyteproject/NESticle/nes/cpu"
+
 type NES struct {
-	CPU uint16 // *OLC6502
-	RAM	[]uint8
+	CPU cpu.CPU
 }
 
 func NewBus() (*NES, error) {
-	ram := make([]uint8, 64 * 1024)
-	nes := NES{CPU: nil, RAM: ram}
+	nes := NES{CPU: nil}
 
 	return &nes, nil
 }
